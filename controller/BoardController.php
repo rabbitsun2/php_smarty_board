@@ -29,7 +29,7 @@
         private function templateDir(){
             $smarty = $this->getSmarty();
             $root_dir = $this->getRootDir();
-            $smarty->template_dir = $root_dir . '/view/board';
+            $smarty->setTemplateDir($root_dir . '/view/board');
             $this->setSmarty($smarty);
         }
 
