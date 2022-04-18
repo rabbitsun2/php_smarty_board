@@ -13,7 +13,7 @@
         private function templateDir(){
             $smarty = $this->getSmarty();
             $root_dir = $this->getRootDir();
-            $smarty->template_dir = $root_dir . '/view';
+            $smarty->setTemplateDir($root_dir . '/view');
 
             $this->setSmarty($smarty);
 
@@ -23,9 +23,10 @@
             //echo "홈2 / 참";
             //require_once $this->root_dir . "view/home.php";
             
-            $smarty = $this->getSmarty();
-
             $this->templateDir();
+            $smarty = $this->getSmarty();
+            $smarty->clearAllCache();
+
             $smarty->assign("option_selected", "NE");
             $smarty->display('index.tpl');
 
